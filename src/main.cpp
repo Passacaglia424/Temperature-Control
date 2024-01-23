@@ -3,13 +3,15 @@
 #include "QApplication"
 
 #include "MonitorWidget.h"
+
 #define MAX_BUFF_SIZE 1024
 
-int main(){
-    QApplication a();
+int main(int argc, char *argv[]) {
+    QApplication a(argc, argv);
     // 创建并显示窗口
-    MonitorWidget monitorWidget;
-    monitorWidget.show();
+    auto *monitor_widget = new MonitorWidget;
+    monitor_widget->setMinimumSize(1440, 810);
+    monitor_widget->show();
 
     return a.exec();
 }
